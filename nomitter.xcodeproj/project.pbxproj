@@ -21,6 +21,10 @@
 		3C25087C1E702EB0004233DA /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25087B1E702EB0004233DA /* AddEventViewController.swift */; };
 		3C25087E1E7045E2004233DA /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25087D1E7045E2004233DA /* FirebaseAuth.swift */; };
 		3C2508801E704D22004233DA /* firebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25087F1E704D22004233DA /* firebaseDatabase.swift */; };
+		3C8C7ABE1E75899E0014A1F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C8C7ABD1E75899E0014A1F5 /* GoogleService-Info.plist */; };
+		824BE13A7C06E6AAEF622EE7 /* Pods_nomitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FEA5BEB775660906DCAF81 /* Pods_nomitter.framework */; };
+		A212BA75DF4543D1363D3422 /* Pods_nomitterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1608D64A6CCCE3FC0D15893 /* Pods_nomitterTests.framework */; };
+		C923739FD6BF5177CBB24D83 /* Pods_nomitterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8591DAF22F091AEAC80289 /* Pods_nomitterUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046D4A67BBA2CE98679903A5 /* Pods-nomitterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nomitterUITests/Pods-nomitterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1012AA5D0C167A7B3D4841DE /* Pods-nomitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nomitter/Pods-nomitter.debug.xcconfig"; sourceTree = "<group>"; };
 		3C2508421E702B07004233DA /* nomitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nomitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2508451E702B07004233DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C2508471E702B07004233DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +67,14 @@
 		3C25087B1E702EB0004233DA /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		3C25087D1E7045E2004233DA /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		3C25087F1E704D22004233DA /* firebaseDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firebaseDatabase.swift; sourceTree = "<group>"; };
+		3C8C7ABD1E75899E0014A1F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		459816A0B9935B13DF1F4C49 /* Pods-nomitterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nomitterUITests/Pods-nomitterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4E8591DAF22F091AEAC80289 /* Pods_nomitterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nomitterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57FF0F5D06193C996164E56F /* Pods-nomitterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nomitterTests/Pods-nomitterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E76BE2A444A55CD294A4704 /* Pods-nomitterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nomitterTests/Pods-nomitterTests.release.xcconfig"; sourceTree = "<group>"; };
+		D304E148C5899FC11207B4E7 /* Pods-nomitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-nomitter/Pods-nomitter.release.xcconfig"; sourceTree = "<group>"; };
+		D9FEA5BEB775660906DCAF81 /* Pods_nomitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nomitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1608D64A6CCCE3FC0D15893 /* Pods_nomitterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nomitterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824BE13A7C06E6AAEF622EE7 /* Pods_nomitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A212BA75DF4543D1363D3422 /* Pods_nomitterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C923739FD6BF5177CBB24D83 /* Pods_nomitterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +112,8 @@
 				3C2508591E702B08004233DA /* nomitterTests */,
 				3C2508641E702B08004233DA /* nomitterUITests */,
 				3C2508431E702B07004233DA /* Products */,
+				9E48FE2B1112D2C8FB36BD22 /* Pods */,
+				AA9E4F5B58642D93C6083048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +143,7 @@
 				3C25084C1E702B07004233DA /* Assets.xcassets */,
 				3C25084E1E702B07004233DA /* LaunchScreen.storyboard */,
 				3C2508511E702B07004233DA /* Info.plist */,
+				3C8C7ABD1E75899E0014A1F5 /* GoogleService-Info.plist */,
 			);
 			path = nomitter;
 			sourceTree = "<group>";
@@ -146,6 +166,29 @@
 			path = nomitterUITests;
 			sourceTree = "<group>";
 		};
+		9E48FE2B1112D2C8FB36BD22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1012AA5D0C167A7B3D4841DE /* Pods-nomitter.debug.xcconfig */,
+				D304E148C5899FC11207B4E7 /* Pods-nomitter.release.xcconfig */,
+				57FF0F5D06193C996164E56F /* Pods-nomitterTests.debug.xcconfig */,
+				6E76BE2A444A55CD294A4704 /* Pods-nomitterTests.release.xcconfig */,
+				046D4A67BBA2CE98679903A5 /* Pods-nomitterUITests.debug.xcconfig */,
+				459816A0B9935B13DF1F4C49 /* Pods-nomitterUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA9E4F5B58642D93C6083048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9FEA5BEB775660906DCAF81 /* Pods_nomitter.framework */,
+				E1608D64A6CCCE3FC0D15893 /* Pods_nomitterTests.framework */,
+				4E8591DAF22F091AEAC80289 /* Pods_nomitterUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C25086A1E702B08004233DA /* Build configuration list for PBXNativeTarget "nomitter" */;
 			buildPhases = (
+				A9FC8F50F092EA9C055FCCFF /* [CP] Check Pods Manifest.lock */,
 				3C25083E1E702B06004233DA /* Sources */,
 				3C25083F1E702B06004233DA /* Frameworks */,
 				3C2508401E702B06004233DA /* Resources */,
+				C8E141AD541589B03BA80076 /* [CP] Embed Pods Frameworks */,
+				1A2AC3F3CE67A4B3768C9F31 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C25086D1E702B08004233DA /* Build configuration list for PBXNativeTarget "nomitterTests" */;
 			buildPhases = (
+				F606F5490C716E04C8D7D4FF /* [CP] Check Pods Manifest.lock */,
 				3C2508521E702B08004233DA /* Sources */,
 				3C2508531E702B08004233DA /* Frameworks */,
 				3C2508541E702B08004233DA /* Resources */,
+				DA716C356AA78942C59A1AF9 /* [CP] Embed Pods Frameworks */,
+				A3D76E1E592AEED135AC459D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C2508701E702B08004233DA /* Build configuration list for PBXNativeTarget "nomitterUITests" */;
 			buildPhases = (
+				04EB56BB3F7A2F921AC7CB6F /* [CP] Check Pods Manifest.lock */,
 				3C25085D1E702B08004233DA /* Sources */,
 				3C25085E1E702B08004233DA /* Frameworks */,
 				3C25085F1E702B08004233DA /* Resources */,
+				467E9368CD479702E43BCFAD /* [CP] Embed Pods Frameworks */,
+				67D239104B342AFE4BB87A48 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C2508501E702B07004233DA /* LaunchScreen.storyboard in Resources */,
+				3C8C7ABE1E75899E0014A1F5 /* GoogleService-Info.plist in Resources */,
 				3C25084D1E702B07004233DA /* Assets.xcassets in Resources */,
 				3C25084B1E702B07004233DA /* Main.storyboard in Resources */,
 			);
@@ -277,6 +330,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04EB56BB3F7A2F921AC7CB6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A2AC3F3CE67A4B3768C9F31 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nomitter/Pods-nomitter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		467E9368CD479702E43BCFAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nomitterUITests/Pods-nomitterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D239104B342AFE4BB87A48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nomitterUITests/Pods-nomitterUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3D76E1E592AEED135AC459D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nomitterTests/Pods-nomitterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9FC8F50F092EA9C055FCCFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E141AD541589B03BA80076 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nomitter/Pods-nomitter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA716C356AA78942C59A1AF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nomitterTests/Pods-nomitterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F606F5490C716E04C8D7D4FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C25083E1E702B06004233DA /* Sources */ = {
@@ -439,6 +630,7 @@
 		};
 		3C25086B1E702B08004233DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1012AA5D0C167A7B3D4841DE /* Pods-nomitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
@@ -452,6 +644,7 @@
 		};
 		3C25086C1E702B08004233DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D304E148C5899FC11207B4E7 /* Pods-nomitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
@@ -465,6 +658,7 @@
 		};
 		3C25086E1E702B08004233DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57FF0F5D06193C996164E56F /* Pods-nomitterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -480,6 +674,7 @@
 		};
 		3C25086F1E702B08004233DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E76BE2A444A55CD294A4704 /* Pods-nomitterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +690,7 @@
 		};
 		3C2508711E702B08004233DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 046D4A67BBA2CE98679903A5 /* Pods-nomitterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
@@ -509,6 +705,7 @@
 		};
 		3C2508721E702B08004233DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 459816A0B9935B13DF1F4C49 /* Pods-nomitterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7PPRG6W84P;
