@@ -7,18 +7,38 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailsetViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var adanaTextField:UITextField!
     @IBOutlet var imageView:UIImageView!
-
+    
+    //MARK:Proparty
+    var user: User!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         adanaTextField.delegate = self
+        
+        //ログインしているユーザー情婦を取得
+        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+            
+            guard let user = user else {  return  }
+            self.user = User(authData: user)
+            
+        }
     }
-
+    
+    @IBAction func edit(){
+        guard let adana = adanaTextField.text else {    return    }
+        
+        let currentUser = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+        currentUser?.displayName = adana
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

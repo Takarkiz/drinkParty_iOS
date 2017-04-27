@@ -85,4 +85,16 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
         performSegue(withIdentifier: "toEdit", sender: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == mailTextField {
+            passTextField.becomeFirstResponder()
+        }
+        if textField == passTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
 }
+
+

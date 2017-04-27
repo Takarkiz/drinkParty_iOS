@@ -51,11 +51,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="HDw-on-IF0" kind="show" id="Mkg-XH-rOR"/>
+                        <segue destination="GMh-6j-wVx" kind="show" identifier="login" id="lja-ei-Wtp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1569" y="115"/>
         </scene>
         <!--Detailset View Controller-->
         <scene sceneID="OJE-Ci-8Fe">
@@ -245,7 +246,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="ユーザーを作成">
-                                    <color key="titleColor" red="1" green="0.96867338588295437" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
@@ -281,6 +282,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nd0-DG-fyW"/>
+        <segue reference="ntz-zZ-kwN"/>
+        <segue reference="lja-ei-Wtp"/>
     </inferredMetricsTieBreakers>
 </document>

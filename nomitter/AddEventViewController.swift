@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AddEventViewController: UIViewController,UITextFieldDelegate {
-
+    
     //入力用のTextField
     @IBOutlet var titleTextField :UITextField!
     @IBOutlet var stateTextField:UITextField!
@@ -25,7 +25,7 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
     let ref = FIRDatabase.database().reference()
     
     
-//    MARK:UIViewController Life Cycle
+    //    MARK:UIViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,12 +36,19 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
         localTextField.delegate = self
         memoTextField.delegate = self
         
+        //ログインしているユーザー情婦を取得
         FIRAuth.auth()!.addStateDidChangeListener { auth, user in
-            guard let user = user else {    return  }
-            self.user = User(authData: user)
+            
+            //ログインが完了していなかったら、ログイン画面へとぶ
+            if user != nil{
+                self.performSegue(withIdentifier: "login", sender: nil)
+            }else{
+                guard let user = user else {    return  }
+                self.user = User(authData: user)
+            }
         }
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,24 +58,25 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
     //『完了』ボタン
     @IBAction func finishButton(){
         
-//        入力されているか
+        //        入力されているか
         guard let title = titleTextField.text else {    return  }
         guard let state = stateTextField.text else {    return  }
         guard let date = dateTextField.text else {    return  }
         guard let local = localTextField.text else {    return  }
-        let memo:String!
+        var memo:String = "特になし"
         if memoTextField.text != nil{
-            memo = memoTextField.text
+            memo = memoTextField.text!
         }
+        let adana = FIRAuth.auth()?.currentUser?.displayName!
         
-        let setItem = database(title:title, state:state, date:date, local:local, memo:memo, adana: <#String#>)
-//        新たなchildを生成
-        let itemRef = self.ref.child(title)
-//        データをセット
+        let setItem = database(title:title, state:state, date:date, local:local, memo: memo, adana: adana!)
+        //        新たなchildを生成
+        let itemRef = self.ref.child(user.uid).child(title)
+        //        データをセット
         itemRef.setValue(setItem.toAnyObject())
         
     }
     
-
-
+    
+    
 }
