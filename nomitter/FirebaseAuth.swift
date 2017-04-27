@@ -7,21 +7,22 @@
 //
 
 import Foundation
-//import Firebase
+import Firebase
 
-class AuthSet{
+struct User {
     
-    var mail:String!
-    var pass:String!
+    let uid: String
+    let email: String
+//    let pass:String
     
-    //イニシャライザ
-    init(mail:String,pass:String) {
-        self.mail = mail
-        self.pass = pass
+    init(authData: FIRUser) {
+        uid = authData.uid
+        email = authData.email!
     }
     
-    init(){
-        
+    init(uid: String, email: String) {
+        self.uid = uid
+        self.email = email
     }
     
 }

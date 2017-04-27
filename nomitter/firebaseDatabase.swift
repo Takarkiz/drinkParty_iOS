@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 
 struct database{
@@ -18,25 +19,30 @@ struct database{
     var local:String!
     var memo:String!
     var adana:String!
+    let ref:FIRDatabaseReference?
     
     var dictionary:Dictionary<String, Any>!
     
     //イニシャライザ
-    init(_ title:String,_ state:String,_ date:String,_ local:String,_ memo:String,_ adana:String){
+    init(title:String,state:String,date:String,local:String,memo:String,adana:String){
         self.title = title
         self.state = state
         self.date = date
         self.local = memo
         self.memo = memo
         self.adana = adana
+        self.ref = nil
     }
     
-    init(){
-        
-    }
-    
-    func dic(){
-        
+    func toAnyObject() -> Any {
+        return [
+            "title": title,
+            "state": state,
+            "date": date,
+            "local":local,
+            "memo":memo,
+            "adana":adana,
+        ]
     }
     
     

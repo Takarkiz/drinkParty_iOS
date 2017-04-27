@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddEventViewController: UIViewController,UITextFieldDelegate {
 
@@ -17,9 +18,14 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var localTextField:UITextField!
     @IBOutlet var memoTextField:UITextField!
     
-    //Databaseのインスタンスを生成
-    var datafile:database = database()
     
+    // MARK: Properties
+    var items: [database] = []
+    var user: User!
+    let ref = FIRDatabase.database().reference()
+    
+    
+//    MARK:UIViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +36,10 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
         localTextField.delegate = self
         memoTextField.delegate = self
         
-        
+        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+            guard let user = user else {    return  }
+            self.user = User(authData: user)
+        }
     }
 
     
@@ -41,6 +50,22 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
     
     //『完了』ボタン
     @IBAction func finishButton(){
+        
+//        入力されているか
+        guard let title = titleTextField.text else {    return  }
+        guard let state = stateTextField.text else {    return  }
+        guard let date = dateTextField.text else {    return  }
+        guard let local = localTextField.text else {    return  }
+        let memo:String!
+        if memoTextField.text != nil{
+            memo = memoTextField.text
+        }
+        
+        let setItem = database(title:title, state:state, date:date, local:local, memo:memo, adana: <#String#>)
+//        新たなchildを生成
+        let itemRef = self.ref.child(title)
+//        データをセット
+        itemRef.setValue(setItem.toAnyObject())
         
     }
     

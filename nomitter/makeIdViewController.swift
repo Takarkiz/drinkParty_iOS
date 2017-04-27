@@ -7,39 +7,82 @@
 //
 
 import UIKit
+import Firebase
 
 class makeIdViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var mailTextField:UITextField!
     @IBOutlet var passTextField:UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         mailTextField.delegate = self
         passTextField.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     //登録を完了させる
-    @IBAction func editDone(){
+    @IBAction func willSignup(){
+        //        データがからの場合は処理を中断
+        guard let mail = mailTextField.text else {  return  }
+        guard let pass = passTextField.text else {  return  }
+        
+        self.signup()
+    }
+    
+    @IBAction func willLogin(){
+        //        データがからの場合は処理を中断
+        guard let mail = mailTextField.text else {  return  }
+        guard let pass = passTextField.text else {  return  }
+        
+        self.login()
         
     }
     
-    //ログイン画面に移動
-    @IBAction func toLogin(){
-        performSegue(withIdentifier: "toLogin", sender: nil)
-        
+    //signUpの処理を行う
+    func signup(){
+        FIRAuth.auth()?.createUser(withEmail: mailTextField.text!, password: passTextField.text!){   user, error in
+            if error == nil{
+                //サインイン成功時
+                FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!){ user, error in
+                    if error == nil{
+                        self.toList()
+                    }
+                    
+                }
+            }else{
+                print(error?.localizedDescription)
+            }
+        }
     }
     
+    //ログインの処理を行う
+    func login(){
+        FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!) {user, error in
+            if error == nil{
+                //ログイン成功時
+                self.toList()
+            }else{
+                //ログイン失敗時
+                print(error?.localizedDescription)
+            }
+        }
+    }
     
     private func toList(){
-        performSegue(withIdentifier: "toset", sender: nil)
+        performSegue(withIdentifier: "toList", sender: nil)
     }
-
+    
+    private func toEdit(){
+        performSegue(withIdentifier: "toEdit", sender: nil)
+    }
+    
 }
