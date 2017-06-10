@@ -27,7 +27,10 @@
 		AE881C891EEBE26B00A29B6F /* nomitter-logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = AE881C871EEBE26B00A29B6F /* nomitter-logo_white.png */; };
 		AE881C8A1EEBE26B00A29B6F /* nomitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE881C881EEBE26B00A29B6F /* nomitter-logo.png */; };
 		AE881C8D1EEBE2F700A29B6F /* ビールジョッキのアイコン　2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE881C8C1EEBE2F700A29B6F /* ビールジョッキのアイコン　2.png */; };
-		AE881C8F1EEBE3A700A29B6F /* 07LogoTypeGothic7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE881C8E1EEBE3A700A29B6F /* 07LogoTypeGothic7.ttf */; };
+		AE881C911EEC0C9600A29B6F /* 07LogoTypeGothic7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE881C931EEC0C9600A29B6F /* 07LogoTypeGothic7.ttf */; };
+		AE881C961EEC0DB500A29B6F /* 07YasashisaAntique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE881C981EEC0DB500A29B6F /* 07YasashisaAntique.ttf */; };
+		AE881C9A1EEC0EAF00A29B6F /* 07YasashisaAntique.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE881C991EEC0EAF00A29B6F /* 07YasashisaAntique.otf */; };
+		AE881C9C1EEC0EDC00A29B6F /* ロゴたいぷゴシック.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE881C9B1EEC0EDC00A29B6F /* ロゴたいぷゴシック.otf */; };
 		C923739FD6BF5177CBB24D83 /* Pods_nomitterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8591DAF22F091AEAC80289 /* Pods_nomitterUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +83,10 @@
 		AE881C871EEBE26B00A29B6F /* nomitter-logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nomitter-logo_white.png"; sourceTree = "<group>"; };
 		AE881C881EEBE26B00A29B6F /* nomitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nomitter-logo.png"; sourceTree = "<group>"; };
 		AE881C8C1EEBE2F700A29B6F /* ビールジョッキのアイコン　2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ビールジョッキのアイコン　2.png"; sourceTree = "<group>"; };
-		AE881C8E1EEBE3A700A29B6F /* 07LogoTypeGothic7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.ttf; sourceTree = "<group>"; };
+		AE881C921EEC0C9600A29B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/07LogoTypeGothic7.ttf; sourceTree = "<group>"; };
+		AE881C971EEC0DB500A29B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/07YasashisaAntique.ttf; sourceTree = "<group>"; };
+		AE881C991EEC0EAF00A29B6F /* 07YasashisaAntique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07YasashisaAntique.otf; sourceTree = "<group>"; };
+		AE881C9B1EEC0EDC00A29B6F /* ロゴたいぷゴシック.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ロゴたいぷゴシック.otf"; sourceTree = "<group>"; };
 		D304E148C5899FC11207B4E7 /* Pods-nomitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nomitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-nomitter/Pods-nomitter.release.xcconfig"; sourceTree = "<group>"; };
 		D9FEA5BEB775660906DCAF81 /* Pods_nomitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nomitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1608D64A6CCCE3FC0D15893 /* Pods_nomitterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nomitterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,7 +252,10 @@
 		AE881C901EEBE3AE00A29B6F /* font */ = {
 			isa = PBXGroup;
 			children = (
-				AE881C8E1EEBE3A700A29B6F /* 07LogoTypeGothic7.ttf */,
+				AE881C931EEC0C9600A29B6F /* 07LogoTypeGothic7.ttf */,
+				AE881C981EEC0DB500A29B6F /* 07YasashisaAntique.ttf */,
+				AE881C991EEC0EAF00A29B6F /* 07YasashisaAntique.otf */,
+				AE881C9B1EEC0EDC00A29B6F /* ロゴたいぷゴシック.otf */,
 			);
 			name = font;
 			sourceTree = "<group>";
@@ -375,8 +384,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE881C8F1EEBE3A700A29B6F /* 07LogoTypeGothic7.ttf in Resources */,
+				AE881C911EEC0C9600A29B6F /* 07LogoTypeGothic7.ttf in Resources */,
 				AE881C851EEBD30500A29B6F /* kanpai.jpg in Resources */,
+				AE881C9A1EEC0EAF00A29B6F /* 07YasashisaAntique.otf in Resources */,
+				AE881C961EEC0DB500A29B6F /* 07YasashisaAntique.ttf in Resources */,
 				3C2508501E702B07004233DA /* LaunchScreen.storyboard in Resources */,
 				AE881C8A1EEBE26B00A29B6F /* nomitter-logo.png in Resources */,
 				AE881C891EEBE26B00A29B6F /* nomitter-logo_white.png in Resources */,
@@ -384,6 +395,7 @@
 				3C8C7ABE1E75899E0014A1F5 /* GoogleService-Info.plist in Resources */,
 				3C25084D1E702B07004233DA /* Assets.xcassets in Resources */,
 				3C25084B1E702B07004233DA /* Main.storyboard in Resources */,
+				AE881C9C1EEC0EDC00A29B6F /* ロゴたいぷゴシック.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +615,22 @@
 				3C25084F1E702B07004233DA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AE881C931EEC0C9600A29B6F /* 07LogoTypeGothic7.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE881C921EEC0C9600A29B6F /* Base */,
+			);
+			name = 07LogoTypeGothic7.ttf;
+			sourceTree = "<group>";
+		};
+		AE881C981EEC0DB500A29B6F /* 07YasashisaAntique.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE881C971EEC0DB500A29B6F /* Base */,
+			);
+			name = 07YasashisaAntique.ttf;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

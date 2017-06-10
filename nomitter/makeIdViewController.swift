@@ -13,13 +13,14 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var mailTextField:UITextField!
     @IBOutlet var passTextField:UITextField!
+    var index:Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mailTextField.delegate = self
         passTextField.delegate = self
-        
         
         // Do any additional setup after loading the view.
     }
@@ -54,8 +55,9 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
                 //サインイン成功時
                 FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!){ user, error in
                     if error == nil{
-                        print("サインイン完了")
-                        self.toEdit()
+                        let alert:UIAlertController = UIAlertController(title: "登録完了", message: "引き続き登録手続きを行います", preferredStyle: .alert)
+                        self.okAlert(alert: alert,index:self.index)
+                        
                     }
                     
                 }
@@ -69,9 +71,11 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
     func login(){
         FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!) {user, error in
             if error == nil{
+                let alert:UIAlertController = UIAlertController(title: "ログイン完了", message: "", preferredStyle: .alert)
+                self.okAlert(alert: alert,index: self.index)
+                self.index = 1
                 //ログイン成功時
-                print("ログイン完了")
-                self.toList()
+                
             }else{
                 //ログイン失敗時
                 print(error?.localizedDescription)
@@ -95,6 +99,22 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    //アラートの関数
+    func okAlert(alert:UIAlertController,index:Int){
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+            if index == 0{
+                self.toEdit()
+            }else{
+                self.toList()
+            }
+        }
+            )
+        )
+        present(alert,animated: true,completion: nil)
+        
+        
     }
     
 }
