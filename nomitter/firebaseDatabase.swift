@@ -20,11 +20,12 @@ struct database{
     var memo:String!
     var adana:String!
     let ref:FIRDatabaseReference?
+    let key:String
     
     var dictionary:Dictionary<String, Any>!
     
     //イニシャライザ
-    init(title:String,state:String,date:String,local:String,memo:String,adana:String){
+    init(title:String,state:String,date:String,local:String,memo:String,adana:String,key:String = ""){
         self.title = title
         self.state = state
         self.date = date
@@ -32,6 +33,7 @@ struct database{
         self.memo = memo
         self.adana = adana
         self.ref = nil
+        self.key = key
     }
     
     func toAnyObject() -> Any {
@@ -44,6 +46,19 @@ struct database{
             "adana":adana,
         ]
     }
+    
+    init(snapshot: FIRDataSnapshot) {
+        key = snapshot.key
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        title = snapshotValue["title"] as! String
+        state = snapshotValue["state"] as! String
+        date = snapshotValue["date"] as! String
+        local = snapshotValue["local"] as! String
+        memo = snapshotValue["memo"] as! String
+        adana = snapshotValue["adana"] as! String
+        ref = snapshot.ref
+    }
+
     
     
 }

@@ -54,7 +54,8 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
                 //サインイン成功時
                 FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!){ user, error in
                     if error == nil{
-                        self.toList()
+                        print("サインイン完了")
+                        self.toEdit()
                     }
                     
                 }
@@ -69,6 +70,7 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
         FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!) {user, error in
             if error == nil{
                 //ログイン成功時
+                print("ログイン完了")
                 self.toList()
             }else{
                 //ログイン失敗時

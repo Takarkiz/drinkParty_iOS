@@ -17,6 +17,8 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var dateTextField:UITextField!
     @IBOutlet var localTextField:UITextField!
     @IBOutlet var memoTextField:UITextField!
+    //初期は特になしが入っている
+    var memo:String = "特になし"
     
     
     // MARK: Properties
@@ -36,16 +38,10 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
         localTextField.delegate = self
         memoTextField.delegate = self
         
-        //ログインしているユーザー情婦を取得
         FIRAuth.auth()!.addStateDidChangeListener { auth, user in
-            
-            //ログインが完了していなかったら、ログイン画面へとぶ
-            if user != nil{
-                self.performSegue(withIdentifier: "login", sender: nil)
-            }else{
-                guard let user = user else {    return  }
-                self.user = User(authData: user)
-            }
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            print("ユーザーを認証")
         }
     }
     
@@ -58,12 +54,12 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
     //『完了』ボタン
     @IBAction func finishButton(){
         
-        //        入力されているか
+        //        入力されているか判定
         guard let title = titleTextField.text else {    return  }
         guard let state = stateTextField.text else {    return  }
         guard let date = dateTextField.text else {    return  }
         guard let local = localTextField.text else {    return  }
-        var memo:String = "特になし"
+        
         if memoTextField.text != nil{
             memo = memoTextField.text!
         }
@@ -71,7 +67,7 @@ class AddEventViewController: UIViewController,UITextFieldDelegate {
         
         let setItem = database(title:title, state:state, date:date, local:local, memo: memo, adana: adana!)
         //        新たなchildを生成
-        let itemRef = self.ref.child(user.uid).child(title)
+        let itemRef = self.ref.child(user.uid).child("event").child(title)
         //        データをセット
         itemRef.setValue(setItem.toAnyObject())
         

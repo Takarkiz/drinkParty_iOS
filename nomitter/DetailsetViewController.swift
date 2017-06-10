@@ -37,6 +37,10 @@ class DetailsetViewController: UIViewController,UITextFieldDelegate {
         
         let currentUser = FIRAuth.auth()?.currentUser?.profileChangeRequest()
         currentUser?.displayName = adana
+        //新規登録完了
+        print("userName登録完了")
+        //画面遷移
+        self.toListView()
     }
     
     override func didReceiveMemoryWarning() {
