@@ -9,11 +9,13 @@
 import UIKit
 import Firebase
 
-class makeIdViewController: UIViewController,UITextFieldDelegate {
+class makeIdViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate {
     
     @IBOutlet var mailTextField:UITextField!
     @IBOutlet var passTextField:UITextField!
+    var tempTextField = UITextField()
     var index:Int = 0
+    @IBOutlet var scrolView:UIScrollView!
     
     
     override func viewDidLoad() {
@@ -21,6 +23,7 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
         
         mailTextField.delegate = self
         passTextField.delegate = self
+        scrolView.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -55,7 +58,7 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
                 //サインイン成功時
                 FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!){ user, error in
                     if error == nil{
-                        let alert:UIAlertController = UIAlertController(title: "登録完了", message: "引き続き登録手続きを行います", preferredStyle: .alert)
+                        let alert:UIAlertController = UIAlertController(title: "サインアップが完了しました", message: "引き続き登録手続きを行います", preferredStyle: .alert)
                         self.okAlert(alert: alert,index:self.index)
                         
                     }
@@ -71,9 +74,10 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
     func login(){
         FIRAuth.auth()?.signIn(withEmail: self.mailTextField.text!, password: self.passTextField.text!) {user, error in
             if error == nil{
+                self.index = 1
                 let alert:UIAlertController = UIAlertController(title: "ログイン完了", message: "", preferredStyle: .alert)
                 self.okAlert(alert: alert,index: self.index)
-                self.index = 1
+                
                 //ログイン成功時
                 
             }else{
@@ -116,6 +120,57 @@ class makeIdViewController: UIViewController,UITextFieldDelegate {
         
         
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        tempTextField = textField
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(makeIdViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(makeIdViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    func handleKeyboardWillShowNotification(_ notification: Notification) {
+        
+        
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let myBoundSize: CGSize = UIScreen.main.bounds.size
+        
+        var txtLimit = tempTextField.frame.origin.y + tempTextField.frame.height + 8.0
+        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        
+        
+        print("テキストフィールドの下辺:(\(txtLimit))")
+        print("キーボードの上辺:(\(kbdLimit))")
+        
+        
+        if txtLimit >= kbdLimit {
+            scrolView.contentOffset.y = txtLimit - kbdLimit
+        }
+    }
+    
+    
+    func handleKeyboardWillHideNotification(_ notification: Notification) {
+        
+        
+        scrolView.contentOffset.y = 0
+    }
+    
+
+
     
 }
 

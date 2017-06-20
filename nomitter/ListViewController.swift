@@ -12,6 +12,8 @@ import Firebase
 class ListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet var table:UITableView!
+    @IBOutlet var navigationBar:UINavigationController!
+    
     
     // MARK: Properties
     var items: [database] = []
@@ -23,23 +25,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         print("ViewDidload")
         
-        //ログインしているユーザー情婦を取得
-        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
-            
-            //ログインが完了していなかったら、ログイン画面へとぶ
-            if user != nil{
-                guard let user = user else {    return  }
-                self.user = User(authData: user)
-                print("ユーザー認証完了")
-                
-            }else{
-                print("ユーザー登録し直してください")
-                self.performSegue(withIdentifier: "login", sender: nil)
-            }
-            
-            
-        }
-
+        self.getUserData()
 
         let newRef = ref.child(user.uid).child("event")
 
@@ -79,6 +65,25 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBAction func add(){
         self.performSegue(withIdentifier: "add", sender: nil)
+    }
+    
+    func getUserData(){
+        //ログインしているユーザー情婦を取得
+        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+            
+            //ログインが完了していなかったら、ログイン画面へとぶ
+            if user != nil{
+                guard let user = user else {    return  }
+                self.user = User(authData: user)
+                print("ユーザー認証完了")
+                
+            }else{
+                print("ユーザー登録し直してください")
+                self.performSegue(withIdentifier: "login", sender: nil)
+            }
+            
+            
+        }
     }
     
     
